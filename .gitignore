@@ -2,8 +2,9 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+### *.log to ignore all files with log extension,"*" mean anything ###
 ### IntelliJ IDEA ###
+### /config/ means: ignore only the config folder directly inside your main Git project folder (the root). ###
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -11,6 +12,7 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea/
 
 ### Eclipse ###
 .apt_generated
