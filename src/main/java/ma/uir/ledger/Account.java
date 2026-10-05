@@ -25,6 +25,15 @@ public abstract class Account {
 
     @Override
     public String toString() {
-        return String.format(Locale.ROOT,"%s: %.2f MAD", name, balance);
+        return String.format(Locale.ROOT, "%s: %.2f MAD", name, balance);
+    }
+
+    public static Account createAccount(String accountType, String name, double balance) {
+        return switch (accountType.toUpperCase()) {
+            case "STANDARD" -> new StandardAccount(name, balance);
+            case "PREMIUM" -> new PremiumAccount(name, balance);
+            case "BUSINESS" -> new BusinessAccount(name, balance);
+            default -> throw new IllegalArgumentException("Invalid account type");
+        };
     }
 }
