@@ -15,7 +15,7 @@ public class BusinessAccount extends Account {
     }
 
     @Override
-    public String typeName(){
-        return "BusinessAccount";
+    public String typeName() {
+        return "Business";
     }
 }

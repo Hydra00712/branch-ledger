@@ -14,7 +14,7 @@ public class StandardAccount extends Account {
     }
 
     @Override
-    public String typeName(){
-        return "Standard Account";
+    public String typeName() {
+        return "Standard";
     }
 }
