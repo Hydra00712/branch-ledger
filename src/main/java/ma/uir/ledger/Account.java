@@ -64,4 +64,18 @@ public abstract class Account {
         }
         return balance -= amountToWithdraw;
     }
+
+
+    @Override
+    public boolean equals(Object other){
+        if(this == other ) return true;
+        if(!(other instanceof Account)) return false;
+        Account acc = (Account) other;
+        return name.equals(acc.name);
+    }
+
+    @Override
+    public int hashCode(){
+        return name.hashCode();
+    }
 }
