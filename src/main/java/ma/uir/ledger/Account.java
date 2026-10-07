@@ -47,4 +47,21 @@ public abstract class Account {
     }
 
     public abstract String typeName();
+
+    public double deposit(double amountToDeposit) {
+        if (amountToDeposit <= 0) {
+            throw new IllegalArgumentException("Deposit must be positive:" + amountToDeposit);
+        }
+        return balance += amountToDeposit;
+    }
+
+    public double withdraw(double amountToWithdraw) {
+        if (amountToWithdraw <= 0) {
+            throw new IllegalArgumentException("Amount can't be negative or equal to 0");
+        }
+        if (amountToWithdraw > balance) {
+            throw new IllegalArgumentException("Amount to withdraw can't be bigger than balance: " + balance + " MAD in account");
+        }
+        return balance -= amountToWithdraw;
+    }
 }

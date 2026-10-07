@@ -14,8 +14,8 @@ public class PremiumAccount extends Account {
     }
 
     @Override
-    public String typeName(){
-        return "Premium Account";
+    public String typeName() {
+        return "Premium";
     }
 
 }
