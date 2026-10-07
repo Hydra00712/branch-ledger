@@ -12,4 +12,10 @@ public class PremiumAccount extends Account {
     public double monthlyFee() {
         return MONTHLY_FEE;
     }
+
+    @Override
+    public String typeName(){
+        return "Premium Account";
+    }
+
 }

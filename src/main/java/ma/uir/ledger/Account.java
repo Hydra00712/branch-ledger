@@ -33,7 +33,18 @@ public abstract class Account {
             case "STANDARD" -> new StandardAccount(name, balance);
             case "PREMIUM" -> new PremiumAccount(name, balance);
             case "BUSINESS" -> new BusinessAccount(name, balance);
-            default -> throw new IllegalArgumentException("Invalid account type");
+            default -> throw new IllegalArgumentException("Invalid account type " + accountType);
         };
     }
+
+    public boolean isVip() {
+        if (balance > 3000) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public abstract String typeName();
 }
