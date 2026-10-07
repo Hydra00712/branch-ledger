@@ -1,22 +1,35 @@
 package ma.uir.ledger;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Locale;
+import static ma.uir.ledger.Account.createAccount;
+
+
 public class Main {
     public static void main(String[] args) {
 
-        Account account1 = Account.createAccount("standard","Adam",20000);
-        Account account2 = Account.createAccount("business","Mohamed",15000);
-        Account account3 = Account.createAccount("Premium","Rachid",100000);
+        Account[] clients = {
+                createAccount("standard","Adam",1000),
+                createAccount("premium","Sara",2500),
+                createAccount("standard","Omar",300),
+                createAccount("business","Lina",4200),
+                createAccount("premium","Youssef",750)
+        };
+
+        for(int i=0;i < clients.length;i++){
+            System.out.printf(Locale.ROOT,"Account %d  - %s: %.0f MAD- %s, %.0fMAD/month, %s",i+1,clients[i].getName(),clients[i].getBalance(),clients[i].typeName(),clients[i].monthlyFee(),clients[i].isVip() ? "VIP":"Regular");
+            System.out.println();
+        }
 
         /*
+        Account account1 = createAccount("standard","Adam",20000);
+        Account account2 = createAccount("business","Mohamed",15000);
+        Account account3 = createAccount("Premium","Rachid",100000);
+
+
         Account account4 = Account.createAccount("vip","Yassir",1000);
          */
 
-        System.out.println(account1.monthlyFee());
-        System.out.println(account2.monthlyFee());
-        System.out.println(account3.monthlyFee());
-        System.out.println(Account.INTEREST_RATE);
+
     }
 
 }
